@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestión Financiera - Categorías</title>
+    <link rel="stylesheet" href="../css/categorias.css" />
+    <script type="module" src="../js/guardian.js"></script>
+</head>
+
+<body>
+    <div class="fondo"></div>
+    <header>
+        <nav class="navbar">
+            <img src="../img/categorias.ico" alt="logo">
+            <h1>Categorias</h1>
+            <div class="nav-items">
+                <button class="logout-btn" id="logout-btn">Cerrar sesión</button>
+                <a href="dashboard.html" class="btn-ds">Volver</a>
+            </div>
+        </nav>
+    </header>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="container">
+
+        <!-- AGREGAR CATEGORÍA -->
+        <section class="form-section">
+            <h2>Agregar Categoría</h2>
+            <form id="form-categoria">
+                <div class="form-group">
+                    <label for="nombre">Nombre de Categoría:</label>
+                    <input type="text" id="nombre-categoria" placeholder="Ej: Hogar" required />
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <!-- LISTA DE CATEGORÍAS -->
+        <section class="tbody-categorias">
+            <h2>Categorías Creadas</h2>
+            <ul id="lista-categorias">
+                <!-- Aquí se listarán las categorías -->
+            </ul>
+        </section>
+    </main>
+    <script type="module" src="../js/categorias.js"></script>
+</body>
+
+</html>

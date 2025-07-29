@@ -1,0 +1,272 @@
+/* RESET */
+:root {
+  /* Colores principales */
+  --img-background: url('../img/fondo.jpg');
+  --color-text: #ccc;
+  --color-navbar-bg: rgba(63, 63, 63, 0.699);
+  ;
+  --color-navbar-text: #D1FAE5;
+
+  /* Logo y enlaces */
+  --color-logo: #d7cefe;
+
+  /* Botón logout */
+  --btn-logout-bg: #e74c3c;
+  --btn-logout-hover: #f73434;
+  --btn-logout-text: white;
+  /* Botones */
+  --btn-db-bg: #28a745;
+  --btn-db-bg-hover: #62e693;
+
+  --btn--danger-bg: rgba(175, 4, 4, 0.973);
+  --btn-danger-hover: red;
+
+  --btn-save-bg: #28a745;
+  --btn-save-hover: #218838;
+  --btn-clear-bg: #dc3545;
+  --btn-clear-hover: #c82333;
+
+  /* Formularios y tarjetas */
+  --card-bg: rgba(63, 63, 63, 0.699);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --form-label-color: #D1FAE5;
+  --input-border: #ccc;
+
+  /* Tabla */
+  --table-border: #ddd;
+  --row-compra: #ffecec;
+  --row-venta: #eaffea;
+  --btn-edit-bg: #ffc107;
+  --btn-edit-text: black;
+  --btn-delete-bg: #dc3545;
+  --btn-text: white;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fondo {
+  position: fixed;
+  /* Fixed position */
+  top: 0;
+  /* Top edge */
+  left: 0;
+  /* Left edge */
+  width: 100%;
+  /* Full width */
+  height: 100vh;
+  /* Full viewport height */
+  background-image: var(--img-background);
+  /* Background image */
+  background-size: cover;
+  /* Cover entire element */
+  background-position: center;
+
+  z-index: -1;
+  /* Behind other elements */
+}
+
+/* Body con fondo animado y centrado usando Grid */
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  animation: cambiocolor 10s infinite;
+  transition: 2s;
+  padding-top: 70px;
+}
+
+
+/* Navbar fija */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-navbar-bg);
+  color: var(--color-navbar-text);
+  padding: 10px 20px;
+  height: 70px;
+}
+
+.navbar img {
+  filter: invert(1);
+  height: 60px;
+  width: 60px;
+}
+
+.navbar h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: var(--text-navbar);
+  margin: 0;
+}
+
+.nav-items {
+  display: flex;
+  gap: 10px;
+}
+
+.logout-btn {
+  background-color: var(--btn-logout-bg);
+  border: none;
+  color: var(--text-navbar);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--btn-logout-hover);
+}
+
+.btn-ds {
+  background-color: var(--btn-db-bg);
+  border: none;
+  color: var(--text-navbar);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-ds:hover {
+  background-color: var(--btn-db-bg-hover);
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.form-section,
+.tabla-section {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px var(--card-shadow);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--form-label-color);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btn-guardar {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: var(--btn-save-bg);
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-guardar:hover {
+  background-color: var(--btn-save-hover);
+}
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtros select,
+.filtros input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--input-border);
+}
+
+#btn-limpiar-filtros {
+  background-color: var(--btn-clear-bg);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#btn-limpiar-filtros:hover {
+  background-color: var(--btn-clear-hover);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+tr.compra {
+  background-color: var(--row-compra);
+}
+
+tr.venta {
+  background-color: var(--row-venta);
+}
+
+td button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+td .btn-editar {
+  background-color: var(--btn-edit-bg);
+  color: var(--btn-edit-text);
+}
+
+td .btn-eliminar {
+  background-color: var(--btn-delete-bg);
+  color: var(--btn-delete-text);
+}
